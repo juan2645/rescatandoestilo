@@ -1,0 +1,31 @@
+<h5>Lista de Ropa</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (clothes of clothes; track clothes.nombre) {
+            <tr>
+              <td><img [src]="clothes.imagen" [alt]="clothes.nombre" class="clothes-image"></td>
+              <td>{{ clothes.nombre }}</td>
+              <td>{{ clothes.tipo }}</td>
+              <td>{{ clothes.precio }}</td>
+              @if (clothes.stock >0) {
+                <td>{{ clothes.stock }}</td>
+              } @else {
+                <td class="badge text-bg-warning">No hay stock en estos momentos.</td>
+              }
+            </tr>
+        } @empty {
+            <tr>
+              <td class="badge text-bg-danger" colspan="4">No hay ropa para mostrar.</td>
+            </tr>
+        }
+    </tbody>
+</table>
