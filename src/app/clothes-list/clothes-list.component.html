@@ -7,20 +7,33 @@
             <th>Tipo</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
         @for (clothes of clothes; track clothes.nombre) {
-            <tr>
+            <tr [ngClass]="{'oferta': clothes.oferta}">
               <td><img [src]="clothes.imagen" [alt]="clothes.nombre" class="clothes-image"></td>
               <td>{{ clothes.nombre }}</td>
               <td>{{ clothes.tipo }}</td>
-              <td>{{ clothes.precio }}</td>
+              <td>{{ clothes.precio | currency:'$':'symbol':'1.0-0'}}</td>
               @if (clothes.stock >0) {
                 <td>{{ clothes.stock }}</td>
               } @else {
                 <td class="badge text-bg-warning">No hay stock en estos momentos.</td>
               }
+              <td>
+                <button class="btn btn-success" (click)="restarCantidad(clothes)" [disabled]="clothes.cantidad <= 0">-</button>
+                <input 
+                type="number" 
+                [(ngModel)]="clothes.cantidad"
+                (keyup)="cambioCantidad($event, clothes)"
+                [min]="0"
+                [max]="clothes.stock"
+                [disabled]="clothes.stock <= 0"
+                >
+                <button class="btn btn-success" (click)="sumarCantidad(clothes)" [disabled]="clothes.cantidad >= clothes.stock">+</button>
+              </td>
             </tr>
         } @empty {
             <tr>
