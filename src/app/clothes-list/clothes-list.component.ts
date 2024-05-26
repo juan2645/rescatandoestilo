@@ -35,29 +35,25 @@ export class ClothesListComponent {
          imagen: "assets/img/buzo_polar.jpg",
          oferta: false,
          cantidad: 0,
-     }
-]
-
-sumarCantidad(clothes : Clothes): void{
-  if (clothes.cantidad < clothes.stock)
-    clothes.cantidad++;
-}
-
-restarCantidad(clothes : Clothes): void{
-  if (clothes.cantidad > 0)
-    clothes.cantidad--;
-}
-
-cambioCantidad(event: Event, clothes: Clothes): void {
-  const inputValue = Number((event.target as HTMLInputElement).value);
-
-  if (isNaN(inputValue) || inputValue < 0) {
-    clothes.cantidad = 0;
-  } else if (inputValue > clothes.stock) {
-    clothes.cantidad = clothes.stock;
-  } else {
-    clothes.cantidad = inputValue;
+     },
+     {
+      nombre: "Sueter",
+      tipo: "Lana cuello delgado",
+      precio: 38500,
+      stock: 3,
+      imagen: "assets/img/sueter_lana.jpg",
+      oferta: false,
+      cantidad: 0,
+     },
+     {
+      nombre: "Campera",
+      tipo: "Polar con Cuello",
+      precio: 53000,
+      stock: 4,
+      imagen: "assets/img/campera_polar.jpg",
+      oferta: false,
+      cantidad: 0,
   }
-}
+]
 
 }
