@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Clothes } from '../clothes-list/clothes';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+// import { Clothes } from '../clothes-list/clothes';
 
 @Component({
   selector: 'app-input-integer',
@@ -9,29 +9,35 @@ import { Clothes } from '../clothes-list/clothes';
 
 export class InputIntegerComponent {
 
-  @Input()
-  clothes!: Clothes;
+  @Input() cantidad!: number;
+  @Input() stock!: number;
+  @Output() cantidadChange = new EventEmitter<number>();
 
-    sumarCantidad(clothes : Clothes): void{
-      if (clothes.cantidad < clothes.stock)
-        clothes.cantidad++;
+  sumarCantidad(): void {
+    if (this.cantidad < this.stock) {
+      this.cantidad++;
+      this.cantidadChange.emit(this.cantidad);
     }
+  }
 
-    restarCantidad(clothes : Clothes): void{
-      if (clothes.cantidad > 0)
-        clothes.cantidad--;
+  restarCantidad(): void {
+    if (this.cantidad > 0) {
+      this.cantidad--;
+      this.cantidadChange.emit(this.cantidad);
     }
+  }
 
-    cambioCantidad(event: Event, clothes: Clothes): void {
-      const inputValue = Number((event.target as HTMLInputElement).value);
+  cambioCantidad(event: Event): void {
+    const inputValue = Number((event.target as HTMLInputElement).value);
 
-      if (isNaN(inputValue) || inputValue < 0) {
-        clothes.cantidad = 0;
-      } else if (inputValue > clothes.stock) {
-        clothes.cantidad = clothes.stock;
-      } else {
-        clothes.cantidad = inputValue;
-      }
+    if (isNaN(inputValue) || inputValue < 0) {
+      this.cantidad = 0;
+    } else if (inputValue > this.stock) {
+      this.cantidad = this.stock;
+    } else {
+      this.cantidad = inputValue;
     }
-
+    this.cantidadChange.emit(this.cantidad);
+  }
 }
+

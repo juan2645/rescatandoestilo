@@ -23,7 +23,11 @@
                 <td class="badge text-bg-warning">No hay stock en estos momentos.</td>
               }
               <td>
-                <app-input-integer [clothes] = "clothes"></app-input-integer>
+                <app-input-integer 
+                  [cantidad]="clothes.cantidad" 
+                  [stock]="clothes.stock" 
+                  (cantidadChange)="clothes.cantidad = $event">
+                </app-input-integer>
               </td>
             </tr>
         } @empty {
