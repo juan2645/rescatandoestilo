@@ -29,6 +29,9 @@
                   (cantidadChange)="clothes.cantidad = $event">
                 </app-input-integer>
               </td>
+              <td>
+                <button class="btn btn-secondary" (click)="addToCart(clothes)">Comprar</button>
+              </td>
             </tr>
         } @empty {
             <tr>

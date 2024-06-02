@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Clothes } from './clothes';
+import { ClothesCartService } from '../clothes-cart.service';
 
 @Component({
   selector: 'app-clothes-list',
@@ -55,5 +56,14 @@ export class ClothesListComponent {
       cantidad: 0,
   }
 ]
+  
+constructor(private cart: ClothesCartService) { 
+}
+
+addToCart (clothes: any): void {
+  this.cart.addToCart(clothes);
+  clothes.stock -= clothes.cantidad;
+  clothes.cantidad = 0;
+}
 
 }
