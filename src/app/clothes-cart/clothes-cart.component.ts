@@ -11,8 +11,14 @@ import { Observable } from 'rxjs';
 export class ClothesCartComponent {
 
   cartList$: Observable<Clothes[]>;
+  cartTotal$: Observable<number>;
+
   constructor(private cart : ClothesCartService) {
     this.cartList$ = cart.carList.asObservable();
+    this.cartTotal$ = cart.cartTotal.asObservable();
+  }
+
+  ngOnInit(): void {
   }
 
 }
