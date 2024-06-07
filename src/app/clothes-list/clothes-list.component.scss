@@ -11,5 +11,23 @@ h5 {
     border: 2px solid green;
 }
 
+.badge {
+    margin-top: 9px;
+}
 
-
+.table-responsive {
+    overflow: auto;
+    height: calc(100vh - 150px); 
+  }
+  
+  table thead th {
+    position: sticky;
+    top: 0;
+    background-color: white; 
+    z-index: 1020; 
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4); 
+  }
+  
+  table thead {
+    background-color: white;
+  }

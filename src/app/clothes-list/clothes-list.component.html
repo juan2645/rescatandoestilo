@@ -1,42 +1,44 @@
-<h5>Lista de Ropa</h5>
-<table class="table text-center">
-    <thead>
-        <tr>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Tipo</th>
-            <th>Precio</th>
-            <th>Stock</th>
-            <th>Compra</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for (clothes of clothes; track clothes.nombre) {
-            <tr [ngClass]="{'oferta': clothes.oferta}">
-              <td><img [src]="clothes.imagen" [alt]="clothes.nombre" class="clothes-image"></td>
-              <td>{{ clothes.nombre }}</td>
-              <td>{{ clothes.tipo }}</td>
-              <td>{{ clothes.precio | currency:'$':'symbol':'1.0-0'}}</td>
-              @if (clothes.stock >0) {
-                <td>{{ clothes.stock }}</td>
-              } @else {
-                <td class="badge text-bg-warning">No hay stock en estos momentos.</td>
-              }
-              <td>
-                <app-input-integer 
-                  [cantidad]="clothes.cantidad" 
-                  [stock]="clothes.stock" 
-                  (cantidadChange)="clothes.cantidad = $event">
-                </app-input-integer>
-              </td>
-              <td>
-                <button class="btn btn-secondary" (click)="addToCart(clothes)">Comprar</button>
-              </td>
-            </tr>
-        } @empty {
-            <tr>
-              <td class="badge text-bg-danger" colspan="4">No hay ropa para mostrar.</td>
-            </tr>
-        }
-    </tbody>
-</table>
+<h5>Clothing List</h5>
+<div class="table-responsive">
+  <table class="table text-center">
+      <thead>
+          <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Buy</th>
+          </tr>
+      </thead>
+      <tbody>
+          @for (clothes of clothes; track clothes.nombre) {
+              <tr [ngClass]="{'oferta': clothes.oferta}">
+                <td><img [src]="clothes.imagen" [alt]="clothes.nombre" class="clothes-image"></td>
+                <td>{{ clothes.nombre }}</td>
+                <td>{{ clothes.tipo }}</td>
+                <td>{{ clothes.precio | currency:'$':'symbol':'1.0-0'}}</td>
+                @if (clothes.stock > 0) {
+                  <td>{{ clothes.stock }}</td>
+                } @else {
+                  <td class="badge text-bg-warning">NO STOCK</td>
+                }
+                <td>
+                  <app-input-integer 
+                    [cantidad]="clothes.cantidad" 
+                    [stock]="clothes.stock" 
+                    (cantidadChange)="clothes.cantidad = $event">
+                  </app-input-integer>
+                </td>
+                <td>
+                  <button class="btn btn-secondary" (click)="addToCart(clothes)">Add to Cart</button>
+                </td>
+              </tr>
+          } @empty {
+              <tr>
+                <td class="badge text-bg-danger" colspan="6">THERE ARE NO CLOTHES</td>
+              </tr>
+          }
+      </tbody>
+  </table>
+</div>

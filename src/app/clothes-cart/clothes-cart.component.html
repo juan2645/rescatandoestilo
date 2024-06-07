@@ -1,10 +1,12 @@
-<h5 class="my-4">Carrito de Compras</h5>
+<h5 class="my-4">Shopping Cart</h5>
 <ul class="list-group">
   <li *ngFor="let clothes of (cartList$ | async)" class="list-group-item d-flex justify-content-between align-items-center">
-    <span>{{ clothes.nombre }}</span>
     <span class="badge bg-primary rounded-pill">{{ clothes.cantidad }}</span>
+    <span>{{ clothes.nombre }}</span>
+    <span>{{ clothes.tipo }}</span>
+    <span class="badge bg-primary rounded-pill">$ {{ clothes.precio }}</span>
   </li>
 </ul>
-<div class="d-flex justify-content-end mt-3">
-    <h6 class="fw-bold">Total: <span class="badge bg-success ms-2">$ {{ cartTotal$ | async }}</span></h6>
+<div class="d-flex justify-content-between mt-3">
+    <h6 class="fw-bold custom-margin">Total Purchase: <span class="badge bg-secondary ms-7">$ {{ cartTotal$ | async }}</span></h6>
 </div>
