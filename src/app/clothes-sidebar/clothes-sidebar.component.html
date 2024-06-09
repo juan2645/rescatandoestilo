@@ -1,0 +1,8 @@
+
+<div class="clothes-sidebar p-3 mt-1 rounded black">
+  <h5>Filter</h5>
+  <h4 class="smaller-text">Type</h4>
+  <div *ngFor="let type of types" class="mb-3">
+    <button class="btn btn-outline-primary btn-block" (click)="selectType(type)">{{ type }}</button>
+  </div>
+</div>

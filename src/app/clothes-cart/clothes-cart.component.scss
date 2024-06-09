@@ -22,3 +22,21 @@
     text-align: center; 
     margin-top: 20px; 
   }
+
+  .custom-margin {
+    margin-bottom: 0;
+  }
+  
+  h6.custom-margin {
+    display: flex;
+    align-items: center;
+  }
+  
+  h6.custom-margin .badge {
+    margin-left: 0px; 
+  }
+
+  h6.fw-bold.custom-margin {
+   margin-left: 190px;
+   margin-bottom: 14px;
+  }

@@ -1,0 +1,19 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 10fr 4fr; 
+    gap: 5px; 
+    padding: 5px; 
+  }
+  
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr; 
+    }
+    .sidebar, .list, .cart {
+      grid-column: span 1; 
+    }
+  }
+
+  .div.cart {
+    --bs-gutter-x: 0;
+  }

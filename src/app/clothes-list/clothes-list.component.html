@@ -1,45 +1,42 @@
 
 <div class="table-responsive">
   <h5>Clothing List</h5>
-  <table class="table text-center">
+   <table class="table text-center">
       <thead>
           <tr>
               <th>Image</th>
               <th>Name</th>
-              <th>Type</th>
+              <th>Description</th>
               <th>Price</th>
               <th>Stock</th>
               <th>Buy</th>
           </tr>
       </thead>
       <tbody>
-          @for (clothes of clothes; track clothes.name) {
-              <tr [ngClass]="{'offer': clothes.ofer}">
-                <td><img [src]="clothes.image" [alt]="clothes.name" class="clothes-image"></td>
-                <td>{{ clothes.name }}</td>
-                <td>{{ clothes.type }}</td>
-                <td>{{ clothes.price | currency:'$':'symbol':'1.0-0'}}</td>
-                @if (clothes.stock > 0) {
-                  <td>{{ clothes.stock }}</td>
-                } @else {
-                  <td class="badge text-bg-warning">NO STOCK</td>
-                }
-                <td>
-                  <app-input-integer 
-                    [quantity]="clothes.quantity" 
-                    [stock]="clothes.stock" 
-                    (quantityChange)="clothes.quantity = $event">
-                  </app-input-integer>
-                </td>
-                <td>
-                  <button class="btn btn-secondary" (click)="addToCart(clothes)">Add to Cart</button>
-                </td>
-              </tr>
-          } @empty {
-              <tr>
-                <td class="badge text-bg-danger" colspan="6">THERE ARE NO CLOTHES</td>
-              </tr>
-          }
+          <ng-container *ngIf="clothes.length > 0; else noClothes">
+            <tr *ngFor="let clothesItem of clothes">
+              <td><img [src]="clothesItem.image" [alt]="clothesItem.name" class="clothes-image"></td>
+              <td>{{ clothesItem.name }}</td>
+              <td>{{ clothesItem.description }}</td>
+              <td>{{ clothesItem.price | currency:'$':'symbol':'1.0-0'}}</td>
+              <td>{{ clothesItem.stock > 0 ? clothesItem.stock : 'NO STOCK' }}</td>
+              <td>
+                <app-input-integer 
+                  [quantity]="clothesItem.quantity" 
+                  [stock]="clothesItem.stock" 
+                  (quantityChange)="clothesItem.quantity = $event">
+                </app-input-integer>
+              </td>
+              <td>
+                <button class="btn btn-secondary" (click)="addToCart(clothesItem)">Add to Cart</button>
+              </td>
+            </tr>
+          </ng-container>
+          <ng-template #noClothes>
+            <tr>
+              <td class="badge text-bg-danger" colspan="6">THERE ARE NO CLOTHES</td>
+            </tr>
+          </ng-template>
       </tbody>
   </table>
 </div>

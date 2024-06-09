@@ -11,8 +11,9 @@ export class ClothesListComponent {
 
   clothes: Clothes[] = [
      {
-         name: "Pantalon",
-         type: "Cargo",
+         name: "Pants",
+         description: "Cargo",
+         type: "Pants",
          price: 23200,
          stock: 5,
          image: "assets/img/pantalon_cargo.jpg",
@@ -20,8 +21,9 @@ export class ClothesListComponent {
          quantity: 0,
      },
      {
-         name: "Remera blanca",
-         type: "Algodon",
+         name: "T-shirt",
+         description: "White cotton",
+         type: "T-shirt",
          price: 12600,
          stock: 7,
          image: "assets/img/remera_blanca.jpg",
@@ -29,8 +31,9 @@ export class ClothesListComponent {
          quantity: 0,
      },
      {
-         name: "Buzo",
-         type: "Polar",
+         name: "Jacket",
+         description: "Fleece",
+         type: "Jacket",
          price: 30000,
          stock: 6,
          image: "assets/img/buzo_polar.jpg",
@@ -38,8 +41,9 @@ export class ClothesListComponent {
          quantity: 0,
      },
      {
-        name: "Sueter",
-        type: "Lana cuello delgado",
+        name: "Sweater",
+        description: "Thin-neck wool",
+        type: "Sweater",
         price: 38500,
         stock: 3,
         image: "assets/img/sueter_lana.jpg",
@@ -47,8 +51,9 @@ export class ClothesListComponent {
         quantity: 0,
      },
      {
-        name: "Campera",
-        type: "Polar con Cuello",
+        name: "Jacket",
+        description: "Fleece with collar",
+        type: "Jacket",
         price: 53000,
         stock: 4,
         image: "assets/img/campera_polar.jpg",
@@ -56,6 +61,8 @@ export class ClothesListComponent {
         quantity: 0,
       }
 ]
+
+clothesCopy: Clothes[] = [...this.clothes];
   
 constructor(private cart: ClothesCartService) { 
 }
@@ -65,5 +72,14 @@ addToCart (clothes: any): void {
   clothes.stock -= clothes.quantity;
   clothes.quantity = 0;
 }
+
+filterByType(type: string): void {
+  if (type === 'All') {
+    this.clothesCopy = [...this.clothes];
+  } else {
+    this.clothes = this.clothesCopy.filter(clothes => clothes.type === type);
+  }
+}
+
 
 }

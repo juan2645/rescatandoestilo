@@ -9,6 +9,7 @@ import { ClothesContactComponent } from './clothes-contact/clothes-contact.compo
 import { ClothesClothsComponent } from './clothes-cloths/clothes-cloths.component';
 import { ClothesCartComponent } from './clothes-cart/clothes-cart.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
+import { ClothesSidebarComponent } from './clothes-sidebar/clothes-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
     ClothesContactComponent,
     ClothesClothsComponent,
     ClothesCartComponent,
-    InputIntegerComponent
+    InputIntegerComponent,
+    ClothesSidebarComponent
   ],
   imports: [
     BrowserModule,
