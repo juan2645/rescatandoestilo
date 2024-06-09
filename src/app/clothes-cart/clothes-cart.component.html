@@ -1,12 +1,24 @@
 <h5 class="my-4">Shopping Cart</h5>
-<ul class="list-group">
-  <li *ngFor="let clothes of (cartList$ | async)" class="list-group-item d-flex justify-content-between align-items-center">
-    <span class="badge bg-primary rounded-pill">{{ clothes.cantidad }}</span>
-    <span>{{ clothes.nombre }}</span>
-    <span>{{ clothes.tipo }}</span>
-    <span class="badge bg-primary rounded-pill">$ {{ clothes.precio }}</span>
-  </li>
-</ul>
-<div class="d-flex justify-content-between mt-3">
-    <h6 class="fw-bold custom-margin">Total Purchase: <span class="badge bg-secondary ms-7">$ {{ cartTotal$ | async }}</span></h6>
+<div>
+<div class="shopping-cart">
+  <ul class="list-group">
+    <li *ngFor="let clothes of (cartList$ | async)" class="list-group-item d-flex justify-content-between align-items-center">
+      <span class="badge bg-primary rounded-pill">{{ clothes.quantity }}</span>
+      <span>{{ clothes.name }}</span>
+      <span>{{ clothes.type }}</span>
+      <span class="badge bg-primary rounded-pill">$ {{ clothes.price }}</span>
+    </li>
+  </ul>
+  <div class="d-flex justify-content-between mt-3">
+      <h6 class="fw-bold custom-margin ">Total Purchase:  <span class="badge bg-success ms-7">$ {{ cartTotal$ | async }}</span></h6>
+  </div>
+  
+</div>
+<div class="d-flex justify-content-end mt-3" *ngIf="!purchaseComplete">
+  <button (click)="buyItems()" class="btn btn-primary mt-3" [disabled]="isCartEmpty">Buy</button>
+</div>
+
+</div>
+<div *ngIf="purchaseComplete" class="alert alert-success mt-4" role="alert">
+  Thank you for your purchase!
 </div>

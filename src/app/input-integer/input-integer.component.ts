@@ -8,35 +8,35 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export class InputIntegerComponent {
 
-  @Input() cantidad!: number;
+  @Input() quantity!: number;
   @Input() stock!: number;
-  @Output() cantidadChange = new EventEmitter<number>();
+  @Output() quantityChange = new EventEmitter<number>();
 
-  sumarCantidad(): void {
-    if (this.cantidad < this.stock) {
-      this.cantidad++;
-      this.cantidadChange.emit(this.cantidad);
+  addQuantity(): void {
+    if (this.quantity < this.stock) {
+      this.quantity++;
+      this.quantityChange.emit(this.quantity);
     }
   }
 
-  restarCantidad(): void {
-    if (this.cantidad > 0) {
-      this.cantidad--;
-      this.cantidadChange.emit(this.cantidad);
+  subtractQuantity(): void {
+    if (this.quantity > 0) {
+      this.quantity--;
+      this.quantityChange.emit(this.quantity);
     }
   }
 
-  cambioCantidad(event: Event): void {
+  changeQuantity(event: Event): void {
     const inputValue = Number((event.target as HTMLInputElement).value);
 
     if (isNaN(inputValue) || inputValue < 0) {
-      this.cantidad = 0;
+      this.quantity = 0;
     } else if (inputValue > this.stock) {
-      this.cantidad = this.stock;
+      this.quantity = this.stock;
     } else {
-      this.cantidad = inputValue;
+      this.quantity = inputValue;
     }
-    this.cantidadChange.emit(this.cantidad);
+    this.quantityChange.emit(this.quantity);
   }
 }
 

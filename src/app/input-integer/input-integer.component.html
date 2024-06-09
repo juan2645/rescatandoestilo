@@ -1,10 +1,10 @@
-<button class="btn btn-success" (click)="restarCantidad()" [disabled]="cantidad <= 0">-</button>
+<button class="btn btn-success" (click)="subtractQuantity()" [disabled]="quantity <= 0">-</button>
 <input 
   type="number" 
-  [(ngModel)]="cantidad"
-  (keyup)="cambioCantidad($event)"
+  [(ngModel)]="quantity"
+  (keyup)="changeQuantity($event)"
   [min]="0"
   [max]="stock"
   [disabled]="stock <= 0"
 />
-<button class="btn btn-success" (click)="sumarCantidad()" [disabled]="cantidad >= stock">+</button>
+<button class="btn btn-success" (click)="addQuantity()" [disabled]="quantity >= stock">+</button>

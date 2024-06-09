@@ -1,7 +1,24 @@
 .my-4{
-    color: rgb(63, 81, 220);
+    color: rgb(17, 120, 8);
 }
 
 .custom-margin {
     margin-left: 218px; 
 }
+
+.shopping-cart {
+    background-color: #88ab8d;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.alert {
+    font-family: 'Roboto', sans-serif; 
+    font-size: 1.5rem;
+    color: #ffffff; 
+    background-color: #1e7332; 
+    padding: 20px; 
+    border-radius: 10px; 
+    text-align: center; 
+    margin-top: 20px; 
+  }

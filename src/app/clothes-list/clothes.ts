@@ -1,11 +1,11 @@
 import { Interface } from "readline/promises";
 
 export interface Clothes {
-    nombre: string;
-    tipo: string;
-    precio: number;
+    name: string;
+    type: string;
+    price: number;
     stock: number;
-    imagen: string;
-    oferta: boolean;
-    cantidad: number
+    image: string;
+    ofer: boolean;
+    quantity: number
 }

@@ -11,50 +11,50 @@ export class ClothesListComponent {
 
   clothes: Clothes[] = [
      {
-         nombre: "Pantalon",
-         tipo: "Cargo",
-         precio: 23200,
+         name: "Pantalon",
+         type: "Cargo",
+         price: 23200,
          stock: 5,
-         imagen: "assets/img/pantalon_cargo.jpg",
-         oferta: false,
-         cantidad: 0,
+         image: "assets/img/pantalon_cargo.jpg",
+         ofer: false,
+         quantity: 0,
      },
      {
-         nombre: "Remera blanca",
-         tipo: "Algodon",
-         precio: 12600,
+         name: "Remera blanca",
+         type: "Algodon",
+         price: 12600,
          stock: 7,
-         imagen: "assets/img/remera_blanca.jpg",
-         oferta: true,
-         cantidad: 0,
+         image: "assets/img/remera_blanca.jpg",
+         ofer: true,
+         quantity: 0,
      },
      {
-         nombre: "Buzo",
-         tipo: "Polar",
-         precio: 30000,
+         name: "Buzo",
+         type: "Polar",
+         price: 30000,
          stock: 6,
-         imagen: "assets/img/buzo_polar.jpg",
-         oferta: false,
-         cantidad: 0,
+         image: "assets/img/buzo_polar.jpg",
+         ofer: false,
+         quantity: 0,
      },
      {
-      nombre: "Sueter",
-      tipo: "Lana cuello delgado",
-      precio: 38500,
-      stock: 3,
-      imagen: "assets/img/sueter_lana.jpg",
-      oferta: false,
-      cantidad: 0,
+        name: "Sueter",
+        type: "Lana cuello delgado",
+        price: 38500,
+        stock: 3,
+        image: "assets/img/sueter_lana.jpg",
+        ofer: false,
+        quantity: 0,
      },
      {
-      nombre: "Campera",
-      tipo: "Polar con Cuello",
-      precio: 53000,
-      stock: 4,
-      imagen: "assets/img/campera_polar.jpg",
-      oferta: false,
-      cantidad: 0,
-  }
+        name: "Campera",
+        type: "Polar con Cuello",
+        price: 53000,
+        stock: 4,
+        image: "assets/img/campera_polar.jpg",
+        ofer: false,
+        quantity: 0,
+      }
 ]
   
 constructor(private cart: ClothesCartService) { 
@@ -62,8 +62,8 @@ constructor(private cart: ClothesCartService) {
 
 addToCart (clothes: any): void {
   this.cart.addToCart(clothes);
-  clothes.stock -= clothes.cantidad;
-  clothes.cantidad = 0;
+  clothes.stock -= clothes.quantity;
+  clothes.quantity = 0;
 }
 
 }
