@@ -1,0 +1,412 @@
+[
+    {
+        "name": "Pants",
+        "description": "Cargo",
+        "type": "Pants",
+        "price": 23200,
+        "stock": 5,
+        "image": "assets/img/cargo_pants.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "T-shirt",
+        "description": "White cotton",
+        "type": "T-shirt",
+        "price": 12600,
+        "stock": 7,
+        "image": "assets/img/white_tshirt.jpg",
+        "ofer": true,
+        "quantity": 0
+    },
+    {
+        "name": "Jacket",
+        "description": "Fleece",
+        "type": "Jacket",
+        "price": 30000,
+        "stock": 6,
+        "image": "assets/img/fleece_jacket.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Sweater",
+        "description": "Thin-neck wool",
+        "type": "Sweater",
+        "price": 38500,
+        "stock": 3,
+        "image": "assets/img/wool_sweater.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Sweater",
+        "description": "Yellow wool",
+        "type": "Sweater",
+        "price": 38000,
+        "stock": 4,
+        "image": "assets/img/wool_yellow.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Jacket",
+        "description": "Fleece with collar",
+        "type": "Jacket",
+        "price": 53000,
+        "stock": 4,
+        "image": "assets/img/fleece_jacket_collar.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Hat",
+        "description": "Woolen",
+        "type": "Accessory",
+        "price": 8000,
+        "stock": 10,
+        "image": "assets/img/wool_hat.jpg",
+        "ofer": true,
+        "quantity": 0
+    },
+    {
+        "name": "Jeans",
+        "description": "Blue denim",
+        "type": "Pants",
+        "price": 25000,
+        "stock": 8,
+        "image": "assets/img/blue_jeans.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Scarf",
+        "description": "Woolen",
+        "type": "Accessory",
+        "price": 7000,
+        "stock": 12,
+        "image": "assets/img/wool_scarf.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Gloves",
+        "description": "Leather",
+        "type": "Accessory",
+        "price": 12000,
+        "stock": 9,
+        "image": "assets/img/leather_gloves.jpg",
+        "ofer": true,
+        "quantity": 0
+    },
+    {
+        "name": "Dress",
+        "description": "Summer floral",
+        "type": "Dress",
+        "price": 30000,
+        "stock": 4,
+        "image": "assets/img/summer_floral_dress.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Socks",
+        "description": "Cotton pack of 3",
+        "type": "Accessory",
+        "price": 5000,
+        "stock": 15,
+        "image": "assets/img/cotton_socks.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Trousers",
+        "description": "Formal black",
+        "type": "Pants",
+        "price": 27000,
+        "stock": 7,
+        "image": "assets/img/formal_black_trousers.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "T-shirt",
+        "description": "Graphic print",
+        "type": "T-shirt",
+        "price": 14000,
+        "stock": 10,
+        "image": "assets/img/graphic_print_tshirt.jpg",
+        "ofer": true,
+        "quantity": 0
+    },
+    {
+        "name": "Cap",
+        "description": "Baseball cap",
+        "type": "Accessory",
+        "price": 9000,
+        "stock": 8,
+        "image": "assets/img/baseball_cap.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Skirt",
+        "description": "Pleated",
+        "type": "Dress",
+        "price": 20000,
+        "stock": 5,
+        "image": "assets/img/pleated_skirt.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Shirt",
+        "description": "Formal white",
+        "type": "Jacket",
+        "price": 22000,
+        "stock": 6,
+        "image": "assets/img/formal_white_shirt.jpg",
+        "ofer": true,
+        "quantity": 0
+    },
+    {
+        "name": "Belt",
+        "description": "Leather",
+        "type": "Accessory",
+        "price": 12000,
+        "stock": 10,
+        "image": "assets/img/leather_belt.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Coat",
+        "description": "Winter wool",
+        "type": "Jacket",
+        "price": 60000,
+        "stock": 3,
+        "image": "assets/img/winter_wool_coat.jpg",
+        "ofer": true,
+        "quantity": 0
+    },
+    {
+        "name": "Tank Top",
+        "description": "Cotton",
+        "type": "T-shirt",
+        "price": 8000,
+        "stock": 20,
+        "image": "assets/img/cotton_tank_top.jpg",
+        "ofer": true,
+        "quantity": 0
+    },
+    {
+        "name": "Leggings",
+        "description": "Sport",
+        "type": "Pants",
+        "price": 20000,
+        "stock": 10,
+        "image": "assets/img/sport_leggings.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Hoodie",
+        "description": "Casual",
+        "type": "Sweater",
+        "price": 30000,
+        "stock": 8,
+        "image": "assets/img/casual_hoodie.jpg",
+        "ofer": true,
+        "quantity": 0
+    },
+    {
+        "name": "Blazer",
+        "description": "Formal",
+        "type": "Jacket",
+        "price": 45000,
+        "stock": 4,
+        "image": "assets/img/formal_blazer.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Sneakers",
+        "description": "Running shoes",
+        "type": "Shoes",
+        "price": 50000,
+        "stock": 6,
+        "image": "assets/img/running_shoes.jpg",
+        "ofer": true,
+        "quantity": 0
+    },
+    {
+        "name": "Sandals",
+        "description": "Leather",
+        "type": "Shoes",
+        "price": 30000,
+        "stock": 5,
+        "image": "assets/img/leather_sandals.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Boots",
+        "description": "Hiking",
+        "type": "Shoes",
+        "price": 60000,
+        "stock": 3,
+        "image": "assets/img/hiking_boots.jpg",
+        "ofer": true,
+        "quantity": 0
+    },
+    {
+        "name": "Cardigan",
+        "description": "Knit",
+        "type": "Sweater",
+        "price": 38000,
+        "stock": 5,
+        "image": "assets/img/knit_cardigan.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "T-shirt",
+        "description": "red",
+        "type": "T-shirt",
+        "price": 10000,
+        "stock": 10,
+        "image": "assets/img/t-shirt_red.jpg",
+        "ofer": true,
+        "quantity": 0
+    },
+    {
+        "name": "T-shirt",
+        "description": "Green",
+        "type": "T-shirt",
+        "price": 10000,
+        "stock": 10,
+        "image": "assets/img/t-shirt_green.jpg",
+        "ofer": true,
+        "quantity": 0
+    },
+    {
+        "name": "T-shirt",
+        "description": "Yellow",
+        "type": "T-shirt",
+        "price": 10000,
+        "stock": 8,
+        "image": "assets/img/t-shirt_yellow.jpg",
+        "ofer": true,
+        "quantity": 0
+    },
+    {
+        "name": "Basic pants",
+        "description": "Black",
+        "type": "Pants",
+        "price": 25000,
+        "stock": 7,
+        "image": "assets/img/basic_pants.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Pocket pants",
+        "description": "Green",
+        "type": "Pants",
+        "price": 23000,
+        "stock": 5,
+        "image": "assets/img/pocket_pants.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Work pants",
+        "description": "Winter",
+        "type": "Pants",
+        "price": 21000,
+        "stock": 4,
+        "image": "assets/img/work_pants.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Dress Welk",
+        "description": "Pink",
+        "type": "Dress",
+        "price": 13000,
+        "stock": 5,
+        "image": "assets/img/dress_pink.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Dress Lady",
+        "description": "Purple",
+        "type": "Dress",
+        "price": 14000,
+        "stock": 3,
+        "image": "assets/img/dress_purple.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Goffy Dress ",
+        "description": "Red",
+        "type": "Dress",
+        "price": 16000,
+        "stock": 6,
+        "image": "assets/img/dress_red.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Natural Shoes",
+        "description": "Green",
+        "type": "Shoes",
+        "price": 18000,
+        "stock": 5,
+        "image": "assets/img/shoes_green.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Blue Shoes",
+        "description": "Mezcilla",
+        "type": "Shoes",
+        "price": 11000,
+        "stock": 2,
+        "image": "assets/img/shoes_mezcilla.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Sport Shoes",
+        "description": "Upgrade",
+        "type": "Shoes",
+        "price": 9000,
+        "stock": 3,
+        "image": "assets/img/shoes_sport.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Gold Sweater",
+        "description": "Every",
+        "type": "Sweater",
+        "price": 18000,
+        "stock": 4,
+        "image": "assets/img/sweater_every.jpg",
+        "ofer": false,
+        "quantity": 0
+    },
+    {
+        "name": "Warm Sweater",
+        "description": "Yellow",
+        "type": "Sweater",
+        "price": 16000,
+        "stock": 2,
+        "image": "assets/img/sweater_warm.jpg",
+        "ofer": false,
+        "quantity": 0
+    }
+]

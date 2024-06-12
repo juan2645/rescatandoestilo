@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Clothes } from './clothes';
 import { ClothesCartService } from '../clothes-cart.service';
+import { ClothesContactComponent } from '../clothes-contact/clothes-contact.component';
+import { ClothesDataService } from '../clothes-data.service';
 
 @Component({
   selector: 'app-clothes-list',
@@ -9,62 +11,22 @@ import { ClothesCartService } from '../clothes-cart.service';
 })
 export class ClothesListComponent {
 
-  clothes: Clothes[] = [
-     {
-         name: "Pants",
-         description: "Cargo",
-         type: "Pants",
-         price: 23200,
-         stock: 5,
-         image: "assets/img/pantalon_cargo.jpg",
-         ofer: false,
-         quantity: 0,
-     },
-     {
-         name: "T-shirt",
-         description: "White cotton",
-         type: "T-shirt",
-         price: 12600,
-         stock: 7,
-         image: "assets/img/remera_blanca.jpg",
-         ofer: true,
-         quantity: 0,
-     },
-     {
-         name: "Jacket",
-         description: "Fleece",
-         type: "Jacket",
-         price: 30000,
-         stock: 6,
-         image: "assets/img/buzo_polar.jpg",
-         ofer: false,
-         quantity: 0,
-     },
-     {
-        name: "Sweater",
-        description: "Thin-neck wool",
-        type: "Sweater",
-        price: 38500,
-        stock: 3,
-        image: "assets/img/sueter_lana.jpg",
-        ofer: false,
-        quantity: 0,
-     },
-     {
-        name: "Jacket",
-        description: "Fleece with collar",
-        type: "Jacket",
-        price: 53000,
-        stock: 4,
-        image: "assets/img/campera_polar.jpg",
-        ofer: false,
-        quantity: 0,
-      }
-]
-
+clothes: Clothes[] = [];
 clothesCopy: Clothes[] = [...this.clothes];
   
-constructor(private cart: ClothesCartService) { 
+constructor(
+    private cart: ClothesCartService,
+    private clothesDataService: ClothesDataService) { 
+}
+
+ngOnInit(): void {
+  this.clothesDataService.getAll().subscribe(
+    (clothes) => {
+      this.clothes = clothes;
+      this.clothesCopy = [...clothes];  
+    },
+    (error) => console.error('Error fetching clothes data', error)
+  );
 }
 
 addToCart (clothes: any): void {
@@ -75,7 +37,7 @@ addToCart (clothes: any): void {
 
 filterByType(type: string): void {
   if (type === 'All') {
-    this.clothesCopy = [...this.clothes];
+    this.clothes = [...this.clothesCopy];
   } else {
     this.clothes = this.clothesCopy.filter(clothes => clothes.type === type);
   }

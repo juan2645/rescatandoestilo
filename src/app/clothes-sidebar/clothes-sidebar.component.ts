@@ -8,7 +8,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class ClothesSidebarComponent {
   @Output() filterByType = new EventEmitter<string>();
 
-  types: string[] = ['T-shirt', 'Pants', 'Jacket', 'Sweater'];
+  types: string[] = ['T-shirt', 'Pants', 'Jacket', 'Dress', 'Shoes','Sweater','Accessory'];
 
   constructor() { }
 
