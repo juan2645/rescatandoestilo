@@ -5,8 +5,8 @@
     <li *ngFor="let clothes of (cartList$ | async)" class="list-group-item d-flex justify-content-between align-items-center">
       <span class="badge bg-primary rounded-pill">{{ clothes.quantity }}</span>
       <span>{{ clothes.name }}</span>
-      <span>{{ clothes.type }}</span>
-      <span class="badge bg-primary rounded-pill">$ {{ clothes.price }}</span>
+      <span>{{ clothes.description }}</span>
+      <span class="badge bg-primary rounded-pill">$ {{ clothes.price * clothes.quantity }}</span>
     </li>
   </ul>
   <div class="d-flex justify-content-between mt-3">

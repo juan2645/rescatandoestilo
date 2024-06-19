@@ -19,7 +19,11 @@
               <td>{{ clothesItem.name }}</td>
               <td>{{ clothesItem.description }}</td>
               <td>{{ clothesItem.price | currency:'$':'symbol':'1.0-0'}}</td>
-              <td>{{ clothesItem.stock > 0 ? clothesItem.stock : 'NO STOCK' }}</td>
+              <td>
+                <span [ngClass]="{'badge bg-danger': clothesItem.stock === 0}">
+                  {{ clothesItem.stock > 0 ? clothesItem.stock : 'NO STOCK' }}
+                </span>
+              </td>
               <td>
                 <app-input-integer 
                   [quantity]="clothesItem.quantity" 
