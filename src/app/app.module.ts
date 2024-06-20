@@ -10,7 +10,7 @@ import { ClothesClothsComponent } from './clothes-cloths/clothes-cloths.componen
 import { ClothesCartComponent } from './clothes-cart/clothes-cart.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
 import { ClothesSidebarComponent } from './clothes-sidebar/clothes-sidebar.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent]
 })
