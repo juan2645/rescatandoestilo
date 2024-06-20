@@ -33,4 +33,5 @@ export class ClothesCartService {
     this._total = this._cartList.reduce((acc, item) => acc + (item.quantity * item.price), 0);
     this.cartTotal.next(this._total);
   }
+  
 }

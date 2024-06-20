@@ -27,6 +27,7 @@ export class InputIntegerComponent {
   }
 
   changeQuantity(event: Event): void {
+
     const inputValue = Number((event.target as HTMLInputElement).value);
 
     if (isNaN(inputValue) || inputValue < 0) {
@@ -37,6 +38,8 @@ export class InputIntegerComponent {
       this.quantity = inputValue;
     }
     this.quantityChange.emit(this.quantity);
+
   }
+  
 }
 

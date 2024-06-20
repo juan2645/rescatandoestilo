@@ -11,37 +11,36 @@ import { ClothesDataService } from '../clothes-data.service';
 })
 export class ClothesListComponent {
 
-clothes: Clothes[] = [];
-clothesCopy: Clothes[] = [...this.clothes];
+  clothes: Clothes[] = [];
+  clothesCopy: Clothes[] = [...this.clothes];
   
-constructor(
+  constructor(
     private cart: ClothesCartService,
     private clothesDataService: ClothesDataService) { 
-}
-
-ngOnInit(): void {
-  this.clothesDataService.getAll().subscribe(
-    (clothes) => {
-      this.clothes = clothes;
-      this.clothesCopy = [...clothes];  
-    },
-    (error) => console.error('Error fetching clothes data', error)
-  );
-}
-
-addToCart (clothes: any): void {
-  this.cart.addToCart(clothes);
-  clothes.stock -= clothes.quantity;
-  clothes.quantity = 0;
-}
-
-filterByType(type: string): void {
-  if (type === 'All') {
-    this.clothes = [...this.clothesCopy];
-  } else {
-    this.clothes = this.clothesCopy.filter(clothes => clothes.type === type);
   }
-}
 
+  ngOnInit(): void {
+    this.clothesDataService.getAll().subscribe(
+      (clothes) => {
+        this.clothes = clothes;
+        this.clothesCopy = [...clothes];  
+      },
+      (error) => console.error('Error fetching clothes data', error)
+      );
+  }
+
+  addToCart (clothes: any): void {
+   this.cart.addToCart(clothes);
+   clothes.stock -= clothes.quantity;
+   clothes.quantity = 0;
+  }
+
+  filterByType(type: string): void {
+    if (type === 'All') {
+      this.clothes = [...this.clothesCopy];
+    } else {
+      this.clothes = this.clothesCopy.filter(clothes => clothes.type === type);
+    }
+  }
 
 }

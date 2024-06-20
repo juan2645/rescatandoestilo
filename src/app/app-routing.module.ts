@@ -14,7 +14,7 @@ const routes: Routes = [
     component: ClothesClothsComponent
   },
   {
-    path: 'contacto',
+    path: 'contact',
     component: ClothesContactComponent
   }
 ];

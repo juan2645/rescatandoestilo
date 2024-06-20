@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { InputIntegerComponent } from './input-integer.component';
 
 describe('InputIntegerComponent', () => {

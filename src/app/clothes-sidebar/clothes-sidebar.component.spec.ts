@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ClothesSidebarComponent } from './clothes-sidebar.component';
 
 describe('ClothesSidebarComponent', () => {
