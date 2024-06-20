@@ -3,10 +3,10 @@
 <div class="shopping-cart">
   <ul class="list-group">
     <li *ngFor="let clothes of (cartList$ | async)" class="list-group-item d-flex justify-content-between align-items-center">
-      <span class="badge bg-primary rounded-pill">{{ clothes.quantity }}</span>
+      <span class="badge bg-secondary rounded-pill">{{ clothes.quantity }}</span>
       <span>{{ clothes.name }}</span>
       <span>{{ clothes.description }}</span>
-      <span class="badge bg-primary rounded-pill">$ {{ clothes.price * clothes.quantity }}</span>
+      <span class="badge bg-secondary rounded-pill">$ {{ clothes.price * clothes.quantity }}</span>
     </li>
   </ul>
   <div class="d-flex justify-content-between mt-3">
@@ -15,7 +15,7 @@
   
 </div>
 <div class="d-flex justify-content-end mt-3" *ngIf="!purchaseComplete">
-  <button (click)="buyItems()" class="btn btn-primary mt-3" [disabled]="isCartEmpty">Buy</button>
+  <button (click)="buyItems()" class="btn btn-success mt-3" [disabled]="isCartEmpty">Buy</button>
 </div>
 
 </div>
