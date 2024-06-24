@@ -1,28 +1,57 @@
-# Rescatandoestilo
+# Rescatandoestilo - Tienda de Ropa
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+Este proyecto Angular simula una tienda de ropa en línea donde los usuarios pueden navegar a través de una lista de ropa, agregar artículos a su carrito y realizar una compra.
 
-## Development server
+# Información del estudiante:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Nombre: Juan Carlos Vena
+DNI : 24151085
+e-mail : juan2645@gmail.com
+Sede: Olavarría
+Enlace al proyecto StackBlitz:  https://stackblitz.com/edit/stackblitz-starters-um4hs3?file=angular.json
 
-## Code scaffolding
+# Estructura del proyecto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Componentes :
 
-## Build
+# ClothesListComponent 
+Muestra una lista de prendas obtenidas de una API. Los usuarios pueden ver detalles, agregar artículos a su carrito y filtrar por tipo usando la barra lateral.
+# ClothesSidebarComponent 
+Nos da opciones de filtrado por tipo (por ejemplo, t-shirt, pants, jacket) para ClothesListComponent.
+# ClothesCartComponent 
+Muestra los artículos actualmente en el carrito de compras. Los usuarios pueden ajustar cantidades, ver precios totales, etc.
+# ClothesContactComponent 
+Proporciona información de contacto y un formulario para que los usuarios envíen consultas o mensajes a la tienda.
+# InputIntegerComponent 
+Permite a los usuarios ingresar cantidades de artículos en el carrito, con validación con respecto al stock disponible.
+# ClothesClothsComponent 
+Actúa como contenedor de los componentes anteriores, facilitando la interacción y comunicación entre ellos.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Servicios :
 
-## Running unit tests
+# ClothesDataService
+Recupera datos de ropa de una API JSON ( https://api.jsonbin.io/v3/b/6669dbaead19ca34f8781e31).
+# ClothesCartService
+Gestiona la funcionalidad del carrito de compras, la adición de artículos, el cálculo de totales y el almacenamiento del estado. 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Funcionalidad :
 
-## Running end-to-end tests
+# Lista de ropa
+Muestra una tabla de ropa con detalles con imagen, nombre, descripción, precio, stock y un botón para agregar artículos al carrito.
+# Filtrado 
+Los usuarios pueden filtrar la ropa por tipo (por ejemplo, t-shirt, pants) utilizando la barra lateral.
+# Carrito de Compras 
+Muestra los artículos agregados al carrito con cantidades y precios totales. Los usuarios pueden ajustar cantidades o eliminar artículos. El monto total de la compra se actualiza dinámicamente.
+# Proceso de compra 
+Los usuarios pueden iniciar una compra haciendo clic en el botón "Comprar", que marca la compra como completa y actualiza la interfaz de usuario para mostrar un mensaje de confirmación.
+# Formulario de contacto 
+Permite a los usuarios enviar mensajes o consultas a la tienda a través de un sencillo formulario.
+# Ruteo
+La aplicación incluye al menos dos secciones con sus propias rutas: Inicio (Lista de Ropa) y Contacto.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Rutas :
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# rescatandoestilo
+# Inicio: 
+/cloths - Muestra la lista principal de ropa y el carrito de compras.
+# Contacto: 
+/contact - Muestra el formulario de contacto y los detalles de contacto de la tienda.
