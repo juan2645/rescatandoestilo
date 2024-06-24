@@ -12,6 +12,11 @@ export class InputIntegerComponent {
   @Input() stock!: number;
   @Output() quantityChange = new EventEmitter<number>();
 
+
+  /**
+   * Incrementa la cantidad en uno si es menor que el stock.
+   * Emite el evento quantityChange con la nueva cantidad.
+   */
   addQuantity(): void {
     if (this.quantity < this.stock) {
       this.quantity++;
@@ -19,6 +24,11 @@ export class InputIntegerComponent {
     }
   }
 
+
+  /**
+   * Decrementa la cantidad en uno si es mayor que cero.
+   * Emite el evento quantityChange con la nueva cantidad.
+   */
   subtractQuantity(): void {
     if (this.quantity > 0) {
       this.quantity--;
@@ -26,11 +36,19 @@ export class InputIntegerComponent {
     }
   }
 
+
+  /**
+   * Cambia la cantidad según el valor ingresado en el input numérico.
+   * Ajusta la cantidad para que esté entre 0 y el stock máximo.
+   * Emite el evento quantityChange con la nueva cantidad.
+   * 
+   * @param event El evento de cambio que contiene el valor actualizado del input.
+   */
   changeQuantity(event: Event): void {
 
     const inputValue = Number((event.target as HTMLInputElement).value);
 
-    if (isNaN(inputValue) || inputValue < 0) {
+    if (isNaN(inputValue) || inputValue < 0) {  
       this.quantity = 0;
     } else if (inputValue > this.stock) {
       this.quantity = this.stock;

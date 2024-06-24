@@ -12,7 +12,13 @@ export class ClothesSidebarComponent {
 
   constructor() { }
 
+  /**
+   * Se activa al seleccionar un tipo de prenda en la barra lateral.
+   * Emite un evento para notificar al componente padre sobre el tipo de prenda seleccionado.
+   * @param type es el tipo de prenda seleccionado ('T-shirt', 'Pants', etc.).
+   */
   selectType(type: string) {
     this.filterByType.emit(type);
   }
+  
 }

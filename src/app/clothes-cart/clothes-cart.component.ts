@@ -26,12 +26,20 @@ export class ClothesCartComponent {
     this.allowAddToCart = true;
   }
 
+  /**  
+   * El método ngOnInit se llama una vez que el componente ha sido inicializado.
+   * Se suscribe al observable cartList$ para actualizar isCartEmpty dependiendo de si el carrito está vacío o no.
+   */
   ngOnInit(): void {
     this.cartList$.subscribe(cartList => {
       this.isCartEmpty = cartList.length === 0;
     });
   }
 
+  /** 
+   * El método buyItems se llama cuando el usuario hace clic en el botón "Buy".
+   * Marca la compra como completa y oculta el botón de compra.
+   */
   buyItems() {
     this.purchaseComplete = true;
     this.showBuyButton = false;
